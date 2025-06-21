@@ -1,6 +1,6 @@
 class SearchSuggestionSystem {
   constructor(products) {
-  
+    
     this.products = products.sort();
   }
 
@@ -13,10 +13,11 @@ class SearchSuggestionSystem {
      
       const suggestions = [];
 
+   
       for (const product of this.products) {
         if (product.startsWith(prefix)) {
           suggestions.push(product);
-          if (suggestions.length === 3) break; // Limit to 3 suggestions
+          if (suggestions.length === 3) break;
         }
       }
 
@@ -26,3 +27,10 @@ class SearchSuggestionSystem {
     return result;
   }
 }
+
+//Example 
+const products = ["mobile", "mouse", "moneypot", "monitor", "mousepad"];
+const searchWord = "mouse";
+
+const system = new SearchSuggestionSystem(products);
+console.log(system.getSuggestions(searchWord));
