@@ -1,6 +1,6 @@
 class SearchSuggestionSystem {
   constructor(products) {
-   
+  
     this.products = products.sort();
   }
 
